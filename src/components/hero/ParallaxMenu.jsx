@@ -25,12 +25,8 @@ const ParallaxMenu = () => {
         speed={5}
         style={{ backgroundColor: "#B4BDFF" }}
       />
-      <ParallaxLayer offset={0.3} speed={-1}>
+      <ParallaxLayer offset={0.5} speed={-0.5}>
         <MenuPar />
-      </ParallaxLayer>
-
-      <ParallaxLayer offset={0.3} speed={-0.5} className="ml-40">
-        <Image src={"/cloud.png"} width={200} height={100} />
       </ParallaxLayer>
     </Parallax>
   );

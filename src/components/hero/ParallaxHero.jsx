@@ -1,5 +1,5 @@
 "use client";
-import Hero from "@/components/hero/Hero";
+
 import Image from "next/image";
 import React, { useRef } from "react";
 import { Parallax, ParallaxLayer, IParallax } from "@react-spring/parallax";
@@ -7,26 +7,68 @@ import { Parallax, ParallaxLayer, IParallax } from "@react-spring/parallax";
 const ParallaxHero = () => {
   const parallax = useRef(null);
   return (
-    <Parallax ref={parallax} pages={3}>
-      <ParallaxLayer
-        offset={0.3}
-        speed={-0.8}
-        sticky={{ start: 0.5, end: 1 }}
-        s
-      ></ParallaxLayer>
+    <Parallax ref={parallax} pages={2}>
+      {/*cloud*/}
+      <ParallaxLayer offset={0} speed={-0.5} className="z-30">
+        <Image
+          src={"/cloud.png"}
+          width={250}
+          height={50}
+          className=" absolute left-10"
+        />
+      </ParallaxLayer>
+      <ParallaxLayer offset={0.5} speed={0.5} className="z-30">
+        <Image
+          src={"/cloud.png"}
+          width={250}
+          height={50}
+          className=" absolute right-10"
+        />
+      </ParallaxLayer>
+
+      {/*Night mode*/}
+      <ParallaxLayer offset={0} speed={-1} className=" light:hidden">
+        <Image src={"/home/stars.png"} fill={true} />
+      </ParallaxLayer>
+      <ParallaxLayer offset={0} speed={-1} className=" light:hidden">
+        <Image
+          src={"/home/moon.png"}
+          width={400}
+          height={400}
+          className=" absolute left-72 right-56"
+        />
+      </ParallaxLayer>
+
+      {/*Light Mode*/}
+
       <ParallaxLayer
         offset={0}
-        speed={1}
-        style={{ backgroundColor: "#83A2FF" }}
-      />
-      <ParallaxLayer
-        offset={0.8}
-        speed={5}
-        style={{ backgroundColor: "#B4BDFF" }}
-      />
+        speed={-0.5}
+        className="bg-sky-300 w-full h-full dark:hidden z-10"
+      >
+        <div />
+      </ParallaxLayer>
 
-      <ParallaxLayer offset={0.3} speed={-0.5} className="ml-40">
-        <Image src={"/cloud.png"} width={200} height={100} />
+      <ParallaxLayer offset={0} speed={-1} className=" dark:hidden z-20">
+        <Image
+          src={"/home/sun.png"}
+          width={400}
+          height={400}
+          className=" absolute left-72 right-56"
+        />
+      </ParallaxLayer>
+
+      <ParallaxLayer offset={1} speed={-0.2} className="dark:hidden z-20 ">
+        <Image src={"/home/1.png"} fill={true} />
+      </ParallaxLayer>
+
+      {/*ground*/}
+
+      <ParallaxLayer offset={1} speed={-0.2} className=" z-20 ">
+        <Image src={"/home/3.png"} fill={true} />
+      </ParallaxLayer>
+      <ParallaxLayer offset={1} speed={-0.2} className=" z-20 ">
+        <Image src={"/home/4.png"} fill={true} />
       </ParallaxLayer>
     </Parallax>
   );

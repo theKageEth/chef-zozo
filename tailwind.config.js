@@ -20,7 +20,7 @@ module.exports = {
       themes: {
         light: {
           colors: {
-            background: "#FFFFFF", // or DEFAULT
+            background: "#3e98b2", // or DEFAULT
             foreground: "#11181C", // or 50 to 900 DEFAULT
             primary: {
               //... 50 to 900
@@ -32,7 +32,7 @@ module.exports = {
         },
         dark: {
           colors: {
-            background: "#000000", // or DEFAULT
+            background: "#003260", // or DEFAULT
             foreground: "#ECEDEE", // or 50 to 900 DEFAULT
             primary: {
               foreground: "#FFFFFF",
@@ -43,7 +43,7 @@ module.exports = {
         },
         mytheme: {
           // custom theme
-          extend: "dark",
+          extend: "dark-custom",
           colors: {
             primary: {
               DEFAULT: "#BEF264",
