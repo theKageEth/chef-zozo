@@ -4,7 +4,6 @@ import ThemeProvider from "../components/providers/nextUI/ThemeProvider";
 import AuthProvider from "@/components/providers/auth/AuthProvider";
 import MyNavbar from "@/components/myNavbar/MyNavbar";
 
-
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata = {
@@ -17,10 +16,10 @@ export default function RootLayout({ children }) {
     <html lang="en" className="dark" style={{ colorScheme: "dark" }}>
       <body className={inter.className}>
         <ThemeProvider>
-          <AuthProvider>
-            <MyNavbar />
-            {children}
-          </AuthProvider>
+          {/* <AuthProvider> */}
+          <MyNavbar />
+          {children}
+          {/* </AuthProvider> */}
         </ThemeProvider>
       </body>
     </html>

@@ -24,20 +24,20 @@ const MyNavbar = () => {
 
   return (
     <Navbar
-      className="dark:bg-red-300 bg-pink-500"
+      className="flex flex-row dark:bg-red-300 bg-pink-500"
       classNames={{ base: "bg-violet-100 dark:bg-violet-900" }}
       isBordered
       isMenuOpen={isMenuOpen}
       onMenuOpenChange={setIsMenuOpen}
       shouldHideOnScroll
     >
-      <NavbarContent className="sm:hidden">
+      <NavbarContent className=" flex-0">
         <NavbarMenuToggle
           aria-label={isMenuOpen ? "Close menu" : "Open menu"}
         />
       </NavbarContent>
 
-      <NavbarContent>
+      <NavbarContent className=" flex-2">
         <NavbarBrand>
           <Link as={NextLink} href="/">
             <Image
@@ -53,7 +53,7 @@ const MyNavbar = () => {
         </NavbarBrand>
       </NavbarContent>
 
-      <NavbarContent className="hidden sm:flex gap-4">
+      <NavbarContent>
         <NavbarItem>
           <ThemeSwitcher></ThemeSwitcher>
         </NavbarItem>

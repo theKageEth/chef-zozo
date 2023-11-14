@@ -1,6 +1,5 @@
 import MenuCards from "@/components/cards/MenuCards";
 import ParallaxHero from "@/components/hero/ParallaxHero";
-import ParallaxMenu from "@/components/hero/ParallaxMenu";
 const url = "/cake.png";
 const list = [
   {
@@ -18,13 +17,25 @@ const list = [
   { id: 8, title: "Watermelon", img: url, price: "$12.20" },
 ];
 
-const Main = () => {
+const MenuPar = () => {
   return (
     <div>
       <section>
-        <ParallaxMenu />
+        <div className="flex justify-center">
+          <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-4 gap-4">
+            {list.map((item) => (
+              <MenuCards
+                key={item.id}
+                id={item.id}
+                title={item.title}
+                img={item.img}
+                price={item.price}
+              />
+            ))}
+          </div>
+        </div>
       </section>
     </div>
   );
 };
-export default Main;
+export default MenuPar;

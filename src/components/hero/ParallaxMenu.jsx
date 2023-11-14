@@ -3,8 +3,9 @@ import Hero from "@/components/hero/Hero";
 import Image from "next/image";
 import React, { useRef } from "react";
 import { Parallax, ParallaxLayer, IParallax } from "@react-spring/parallax";
+import MenuPar from "../cards/MenuPar";
 
-const ParallaxHero = () => {
+const ParallaxMenu = () => {
   const parallax = useRef(null);
   return (
     <Parallax ref={parallax} pages={3}>
@@ -24,6 +25,9 @@ const ParallaxHero = () => {
         speed={5}
         style={{ backgroundColor: "#B4BDFF" }}
       />
+      <ParallaxLayer offset={0.3} speed={-1}>
+        <MenuPar />
+      </ParallaxLayer>
 
       <ParallaxLayer offset={0.3} speed={-0.5} className="ml-40">
         <Image src={"/cloud.png"} width={200} height={100} />
@@ -32,4 +36,4 @@ const ParallaxHero = () => {
   );
 };
 
-export default ParallaxHero;
+export default ParallaxMenu;
