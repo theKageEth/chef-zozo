@@ -27,7 +27,11 @@ const ParallaxHero = () => {
       </ParallaxLayer>
 
       {/*Night mode*/}
-      <ParallaxLayer offset={0} speed={-1} className=" light:hidden">
+      <ParallaxLayer
+        offset={0}
+        speed={-0.8}
+        className=" invisible dark:visible"
+      >
         <Image src={"/home/stars.png"} fill={true} />
       </ParallaxLayer>
       <ParallaxLayer offset={0} speed={-1} className=" light:hidden">
@@ -35,7 +39,7 @@ const ParallaxHero = () => {
           src={"/home/moon.png"}
           width={400}
           height={400}
-          className=" absolute left-72 right-56"
+          className=" md:absolute md:left-72 md:right-56"
         />
       </ParallaxLayer>
 
@@ -54,20 +58,16 @@ const ParallaxHero = () => {
           src={"/home/sun.png"}
           width={400}
           height={400}
-          className=" absolute left-72 right-56"
+          className=" md:absolute md:left-72 md:right-56 "
         />
-      </ParallaxLayer>
-
-      <ParallaxLayer offset={1} speed={-0.2} className="dark:hidden z-20 ">
-        <Image src={"/home/1.png"} fill={true} />
       </ParallaxLayer>
 
       {/*ground*/}
 
-      <ParallaxLayer offset={1} speed={-0.2} className=" z-20 ">
+      <ParallaxLayer offset={0.8} speed={-0.2} className=" z-20 ">
         <Image src={"/home/3.png"} fill={true} />
       </ParallaxLayer>
-      <ParallaxLayer offset={1} speed={-0.2} className=" z-20 ">
+      <ParallaxLayer offset={1} speed={-0.2} className=" z-30 ">
         <Image src={"/home/4.png"} fill={true} />
       </ParallaxLayer>
     </Parallax>
