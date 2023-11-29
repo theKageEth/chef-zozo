@@ -46,7 +46,7 @@ const MyNavbar = () => {
               isZoomed
               width={75}
               height={50}
-              src="/flower1.png"
+              src="/cake.png"
               alt="NextUI Fruit Image with Zoom"
             />
           </Link>
@@ -68,7 +68,7 @@ const MyNavbar = () => {
               isZoomed
               width={75}
               height={50}
-              src="/flower1.png"
+              src="/cake.png"
               alt="NextUI Fruit Image with Zoom"
               onClick={() => handleMenuChange(false)}
             />

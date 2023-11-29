@@ -1,28 +1,41 @@
 import MenuCards from "@/components/cards/MenuCards";
-import ParallaxHero from "@/components/hero/ParallaxHero";
-import ParallaxMenu from "@/components/hero/ParallaxMenu";
-const url = "/cake.png";
-const list = [
-  {
-    id: 1,
-    title: "Orange",
-    img: url,
-    price: "$5.50",
-  },
-  { id: 2, title: "Tangerine", img: url, price: "$3.00" },
-  { id: 3, title: "Raspberry", img: url, price: "$10.00" },
-  { id: 4, title: "Lemon", img: url, price: "$5.30" },
-  { id: 5, title: "Avocado", img: url, price: "$15.70" },
-  { id: 6, title: "Lemon 2", img: url, price: "$8.00" },
-  { id: 7, title: "Banana", img: url, price: "$7.50" },
-  { id: 8, title: "Watermelon", img: url, price: "$12.20" },
-];
+import { BASE_URL } from "@/utils/constants/constants";
+import { notFound } from "next/navigation";
 
-const Main = () => {
+export const dynamic = "force-dynamic";
+export const fetchCache = "force-no-store";
+
+const getData = async () => {
+  try {
+    const res = await fetch(`${BASE_URL}/api/dish`, { cache: "no-store" });
+
+    if (!res.ok) {
+      throw new Error("Failed to fetch data");
+    }
+
+    const dishes = await res.json();
+    return dishes;
+  } catch (error) {
+    console.error("Error fetching data:", error.message);
+    throw error;
+  }
+};
+
+const Main = async () => {
+  const data = await getData();
+  if (!BASE_URL && !data) return notFound();
   return (
     <div>
       <section>
-        <ParallaxMenu />
+        {data.map((item) => (
+          <MenuCards
+            key={item.id}
+            id={item.id}
+            title={item.title}
+            img={item.img}
+            price={item.price}
+          />
+        ))}
       </section>
     </div>
   );
