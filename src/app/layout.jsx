@@ -16,11 +16,10 @@ export default function RootLayout({ children }) {
     <html lang="en" className="dark" style={{ colorScheme: "dark" }}>
       <body className={inter.className}>
         <ThemeProvider>
-          {/* <AuthProvider> */}
-          <MyNavbar />
-
-          {children}
-          {/* </AuthProvider> */}
+          <AuthProvider>
+            <MyNavbar />
+            {children}
+          </AuthProvider>
         </ThemeProvider>
       </body>
     </html>

@@ -24,12 +24,11 @@ const MyNavbar = () => {
 
   return (
     <Navbar
-      className="flex flex-row dark:bg-slate-800 bg-sky-300"
+      className="flex flex-row dark:bg-blue-800 bg-sky-300"
       classNames={{ base: "bg-violet-100 dark:bg-violet-900" }}
       isBordered
       isMenuOpen={isMenuOpen}
       onMenuOpenChange={setIsMenuOpen}
-      shouldHideOnScroll
     >
       <NavbarContent className=" flex-0">
         <NavbarMenuToggle

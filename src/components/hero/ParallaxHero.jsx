@@ -3,11 +3,12 @@
 import Image from "next/image";
 import React, { useRef } from "react";
 import { Parallax, ParallaxLayer, IParallax } from "@react-spring/parallax";
+import { Button } from "@nextui-org/button";
 
 const ParallaxHero = () => {
   const parallax = useRef(null);
   return (
-    <Parallax ref={parallax} pages={2}>
+    <Parallax ref={parallax} pages={4}>
       {/*cloud*/}
       <ParallaxLayer offset={0} speed={-0.5} className="z-30">
         <Image
@@ -27,14 +28,8 @@ const ParallaxHero = () => {
       </ParallaxLayer>
 
       {/*Night mode*/}
-      <ParallaxLayer
-        offset={0}
-        speed={-0.8}
-        className=" invisible dark:visible"
-      >
-        <Image src={"/home/stars.png"} fill={true} />
-      </ParallaxLayer>
-      <ParallaxLayer offset={0} speed={-1} className=" light:hidden">
+
+      <ParallaxLayer offset={0} speed={-0.6} className=" hidden dark:block">
         <Image
           src={"/home/moon.png"}
           width={400}
@@ -53,7 +48,7 @@ const ParallaxHero = () => {
         <div />
       </ParallaxLayer>
 
-      <ParallaxLayer offset={0} speed={-1} className=" dark:hidden z-20">
+      <ParallaxLayer offset={0} speed={-0.6} className=" dark:hidden z-20">
         <Image
           src={"/home/sun.png"}
           width={400}
@@ -67,8 +62,15 @@ const ParallaxHero = () => {
       <ParallaxLayer offset={0.8} speed={-0.2} className=" z-20 ">
         <Image src={"/home/3.png"} fill={true} />
       </ParallaxLayer>
+      <ParallaxLayer offset={0.8} speed={-0.2} className=" z-50 ">
+        <Image src={"/mountain.png"} fill={true} />
+      </ParallaxLayer>
       <ParallaxLayer offset={1} speed={-0.2} className=" z-30 ">
         <Image src={"/home/4.png"} fill={true} />
+      </ParallaxLayer>
+
+      <ParallaxLayer sticky={{ start: 2.3, end: 3 }} className="  ">
+        <Button>Check main dishes</Button>
       </ParallaxLayer>
     </Parallax>
   );

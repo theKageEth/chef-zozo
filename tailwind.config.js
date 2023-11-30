@@ -20,7 +20,7 @@ module.exports = {
       themes: {
         light: {
           colors: {
-            background: "#3e98b2", // or DEFAULT
+            background: "#7cd3fc", // or DEFAULT
             foreground: "#11181C", // or 50 to 900 DEFAULT
             primary: {
               //... 50 to 900
