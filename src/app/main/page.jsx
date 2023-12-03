@@ -25,8 +25,8 @@ const Main = async () => {
   const data = await getData();
   if (!BASE_URL && !data) return notFound();
   return (
-    <div>
-      <section>
+    <div className="mt-20 flex items-center justify-center">
+      <section className=" gap-4 grid grid-cols-2 sm:grid-cols-3">
         {data.map((item) => (
           <MenuCards
             key={item.id}
