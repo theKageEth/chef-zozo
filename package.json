@@ -12,6 +12,7 @@
     "@nextui-org/react": "^2.2.9",
     "@react-spring/parallax": "^9.7.3",
     "@react-spring/web": "^9.7.3",
+    "@react-three/drei": "^9.89.2",
     "@react-three/fiber": "^8.15.11",
     "@types/three": "^0.159.0",
     "bcryptjs": "^2.4.3",

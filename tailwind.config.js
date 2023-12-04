@@ -32,7 +32,7 @@ module.exports = {
         },
         dark: {
           colors: {
-            background: "#003260", // or DEFAULT
+            background: "#0F0F0F", // or DEFAULT
             foreground: "#ECEDEE", // or 50 to 900 DEFAULT
             primary: {
               foreground: "#FFFFFF",

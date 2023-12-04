@@ -24,7 +24,7 @@ const MyNavbar = () => {
 
   return (
     <Navbar
-      className="flex flex-row dark:bg-blue-800 bg-sky-300"
+      className="flex flex-row dark:bg-purple-900 bg-sky-300"
       classNames={{ base: "bg-violet-100 dark:bg-violet-900" }}
       isBordered
       isMenuOpen={isMenuOpen}
@@ -43,10 +43,11 @@ const MyNavbar = () => {
               as={NextImage}
               priority={true}
               isZoomed
-              width={75}
-              height={50}
-              src="/cake.png"
+              width={65}
+              height={70}
+              src="/pixel/zozo.gif"
               alt="NextUI Fruit Image with Zoom"
+              className="w-full h-full object-cover"
             />
           </Link>
         </NavbarBrand>
@@ -67,7 +68,7 @@ const MyNavbar = () => {
               isZoomed
               width={75}
               height={50}
-              src="/cake.png"
+              src="/pixel/zozo.gif"
               alt="NextUI Fruit Image with Zoom"
               onClick={() => handleMenuChange(false)}
             />
