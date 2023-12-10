@@ -1,10 +1,7 @@
-import { Inter } from "next/font/google";
 import "./globals.css";
 import ThemeProvider from "../components/providers/nextUI/ThemeProvider";
 import AuthProvider from "@/components/providers/auth/AuthProvider";
 import MyNavbar from "@/components/myNavbar/MyNavbar";
-
-const inter = Inter({ subsets: ["latin"] });
 
 export const metadata = {
   title: "Chef Zozo",
@@ -14,7 +11,7 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en" className="dark">
-      <body className={inter.className}>
+      <body>
         <ThemeProvider>
           <AuthProvider>
             <MyNavbar />

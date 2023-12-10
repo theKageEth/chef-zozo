@@ -5,7 +5,7 @@ import { Image } from "@nextui-org/image";
 
 const MenuCards = ({ id, title, img, price }) => {
   return (
-    <Card shadow="sm" isPressable onPress={() => console.log("item pressed")}>
+    <Card shadow="sm">
       <CardBody className="overflow-visible p-0">
         <Image
           shadow="sm"
