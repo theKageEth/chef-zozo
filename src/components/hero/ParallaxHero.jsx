@@ -8,10 +8,10 @@ import ModalHome from "./ModalHome";
 const ParallaxHero = () => {
   const parallax = useRef(null);
   return (
-    <Parallax ref={parallax} pages={3}>
+    <Parallax ref={parallax} pages={2.5}>
       <ParallaxLayer offset={2} speed={0.2} className="z-20"></ParallaxLayer>
 
-      <ParallaxLayer sticky={{ start: 1, end: 1.3 }} className="z-20">
+      <ParallaxLayer offset={1} speed={-0.2} className="z-20">
         <div className="flex items-center justify-center h-full">
           <Image
             src={"/pixel/greetings.gif"}
@@ -23,7 +23,7 @@ const ParallaxHero = () => {
         </div>
       </ParallaxLayer>
 
-      <ParallaxLayer sticky={{ start: 1.6, end: 2.3 }} className="z-20">
+      <ParallaxLayer offset={1.8} speed={0.5} className="z-20">
         <div className="flex items-center justify-center h-full">
           <ModalHome className="mx-auto" />
         </div>

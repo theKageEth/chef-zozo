@@ -35,7 +35,7 @@ const ModalHome = () => {
 
                   <Link href="/main">
                     <Button color="success" variant="ghost">
-                      Desert
+                      Main Dishes
                     </Button>
                   </Link>
                 </div>
@@ -52,7 +52,7 @@ const ModalHome = () => {
 
                   <Link href="/desert">
                     <Button color="success" variant="ghost">
-                      Desert
+                      Deserts
                     </Button>
                   </Link>
                 </div>

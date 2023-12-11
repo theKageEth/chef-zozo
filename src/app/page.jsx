@@ -6,7 +6,9 @@ import Scene from "@/components/threejs/Scene";
 export default function Home() {
   return (
     <div>
-      <ParallaxHero />
+      <section className="overflow-y-auto h-screen">
+        <ParallaxHero />
+      </section>
     </div>
   );
 }
