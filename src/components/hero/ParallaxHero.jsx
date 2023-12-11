@@ -3,59 +3,29 @@
 import Image from "next/image";
 import React, { useRef } from "react";
 import { Parallax, ParallaxLayer, IParallax } from "@react-spring/parallax";
-import { Button } from "@nextui-org/button";
-import Link from "next/link";
+import ModalHome from "./ModalHome";
 
 const ParallaxHero = () => {
   const parallax = useRef(null);
   return (
-    <Parallax ref={parallax} pages={4}>
+    <Parallax ref={parallax} pages={3}>
       <ParallaxLayer offset={2} speed={0.2} className="z-20"></ParallaxLayer>
 
-      <ParallaxLayer sticky={{ start: 1.2, end: 1.8 }} className="z-20">
-        <Image
-          src={"/pixel/greetings.gif"}
-          priority={true}
-          width={400}
-          height={400}
-          className=" mx-auto"
-        />
+      <ParallaxLayer sticky={{ start: 1, end: 1.3 }} className="z-20">
+        <div className="flex items-center justify-center h-full">
+          <Image
+            src={"/pixel/greetings.gif"}
+            priority={true}
+            width={400}
+            height={400}
+            className="ml-4"
+          />
+        </div>
       </ParallaxLayer>
 
-      <ParallaxLayer sticky={{ start: 2.5, end: 3 }} className="z-20">
-        <div className="mt-20 flex items-center justify-center ">
-          <Link href="/main">
-            <Button
-              className="bg-gradient-to-tr from-pink-500 to-blue-400 text-white shadow-lg"
-              endContent={
-                <Image
-                  src={"/pixel/cooking.gif"}
-                  priority={true}
-                  width={200}
-                  height={200}
-                  className=" ml-10 mr-10"
-                />
-              }
-            >
-              Check what's Cooking
-            </Button>
-          </Link>
-          <Link href="/desert">
-            <Button
-              className="bg-gradient-to-tr from-pink-500 to-blue-400 text-white shadow-lg"
-              endContent={
-                <Image
-                  src={"/pixel/desert.gif"}
-                  priority={true}
-                  width={200}
-                  height={200}
-                  className=" ml-10 mr-10"
-                />
-              }
-            >
-              Desert Time!!!
-            </Button>
-          </Link>
+      <ParallaxLayer sticky={{ start: 1.6, end: 2.3 }} className="z-20">
+        <div className="flex items-center justify-center h-full">
+          <ModalHome className="mx-auto" />
         </div>
       </ParallaxLayer>
 

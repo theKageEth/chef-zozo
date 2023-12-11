@@ -130,9 +130,8 @@ const Dashboard = () => {
         <div className="mt-20 flex items-center justify-center">
           <section className=" gap-4 grid grid-cols-2 sm:grid-cols-3">
             {dishData?.map((item) => (
-              <div>
+              <div key={item._id}>
                 <MenuCards
-                  key={item._id}
                   id={item.id}
                   title={item.title}
                   img={item.img}
@@ -159,9 +158,8 @@ const Dashboard = () => {
         <div className="mt-20 flex items-center justify-center">
           <section className=" gap-4 grid grid-cols-2 sm:grid-cols-3">
             {desertData?.map((item) => (
-              <div>
+              <div key={item._id}>
                 <MenuCards
-                  key={item._id}
                   id={item.id}
                   title={item.title}
                   img={item.img}
