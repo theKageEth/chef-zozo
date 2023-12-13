@@ -10,7 +10,9 @@ const Welcome = () => {
         sequence={[
           "Check My Instagram",
           1000,
-          "Check My Instagram By Using The 3D Laptop",
+          "Check My Snapchat",
+          1000,
+          "Use the 3D Laptop",
           1000,
         ]}
         speed={50}

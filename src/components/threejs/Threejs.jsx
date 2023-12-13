@@ -1,4 +1,5 @@
 "use client";
+import { useTheme } from "next-themes";
 import {
   Environment,
   useGLTF,
@@ -10,13 +11,17 @@ import {
 } from "@react-three/drei";
 
 const Threejs = () => {
+  const { theme } = useTheme();
   const laptop = useGLTF(
     "https://vazxmixjsiawhamofees.supabase.co/storage/v1/object/public/models/macbook/model.gltf"
   );
   return (
     <>
       <Environment preset="city" />
-      <color args={["#241a1a"]} attach="background" />
+      <color
+        args={theme === "dark" ? ["#32407B"] : ["#F9F3DF"]}
+        attach="background"
+      />
       <PresentationControls
         global
         rotation={[0.13, 0.1, 0]}

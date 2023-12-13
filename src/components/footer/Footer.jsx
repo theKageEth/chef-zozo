@@ -29,7 +29,7 @@ const Footer = () => {
           <Welcome />
         </div>
       </footer>
-      <div className="bg-[#F9F3DF] dark:bg-[#32407B] h-[400px]  p-4 block">
+      <div className="bg-[#F9F3DF] dark:bg-[#32407B] h-[400px]  block">
         <Scene />
       </div>
     </>

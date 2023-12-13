@@ -19,16 +19,16 @@ const ThemeSwitcher = () => {
     <ButtonGroup>
       <Button
         isIconOnly
-        color="primary"
-        variant="ghost"
+        className="bg-orange-300"
+        variant="shadow"
         onClick={() => setTheme("light")}
       >
         <FaSun />
       </Button>
       <Button
         isIconOnly
-        color="secondary"
-        variant="ghost"
+        className="bg-purple-600"
+        variant="shadow"
         onClick={() => setTheme("dark")}
       >
         <FaMoon />

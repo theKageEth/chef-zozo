@@ -16,7 +16,7 @@ const ModalHome = () => {
   return (
     <>
       <Button
-        className="bg-gradient-to-tr from-yellow-500 to-blue-300 dark:from-violet-500 dark:to-blue-300  text-black dark:text-white hover:shadow-lg w-[300px] h-[100px]  font-semibold"
+        className="bg-gradient-to-tr from-orange-300 to-purple-300 dark:from-purple-800 dark:to-blue-950  text-black dark:text-white hover:shadow-lg w-[300px] h-[100px]  font-semibold"
         onPress={onOpen}
       >
         Check What is Cooking!

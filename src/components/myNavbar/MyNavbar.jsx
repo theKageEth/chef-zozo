@@ -1,4 +1,7 @@
 "use client";
+import { GiCookingPot } from "react-icons/gi";
+import { GiCakeSlice } from "react-icons/gi";
+import { IoIosHome } from "react-icons/io";
 import { useState } from "react";
 import ThemeSwitcher from "../providers/nextUI/ThemeSwitcher";
 import NextLink from "next/link";
@@ -10,47 +13,94 @@ import {
   NavbarBrand,
   NavbarContent,
   NavbarItem,
-  NavbarMenuToggle,
-  NavbarMenu,
-  NavbarMenuItem,
-} from "@nextui-org/navbar";
+  Button,
+  DropdownItem,
+  DropdownTrigger,
+  Dropdown,
+  DropdownMenu,
+  DropdownSection,
+} from "@nextui-org/react";
 
 const MyNavbar = () => {
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
-
-  const handleMenuChange = (isOpen) => {
-    setIsMenuOpen(isOpen);
-  };
-
   return (
     <Navbar
-      className="flex flex-row dark:bg-[#220E24] bg-[#F4D19B]"
-      classNames={{ base: "bg-violet-100 dark:bg-violet-900" }}
+      className="flex flex-row dark:bg-[#461c49] bg-[#F4D19B] z-50"
       isBordered
-      isMenuOpen={isMenuOpen}
-      onMenuOpenChange={setIsMenuOpen}
     >
-      <NavbarContent className=" flex-0">
-        <NavbarMenuToggle
-          aria-label={isMenuOpen ? "Close menu" : "Open menu"}
-        />
-      </NavbarContent>
+      <NavbarBrand>
+        <Link as={NextLink} href="/">
+          <Image
+            as={NextImage}
+            priority={true}
+            isZoomed
+            width={65}
+            height={70}
+            src="/pixel/zozo.gif"
+            alt="NextUI Fruit Image with Zoom"
+            className="w-full h-full object-cover"
+          />
+        </Link>
+      </NavbarBrand>
+      <NavbarContent>
+        <Dropdown>
+          <DropdownTrigger>
+            <Button
+              variant="shadow"
+              className=" dark:bg-[#F4D19B] dark:text-black text-white bg-[#461c49] "
+            >
+              Open Menu
+            </Button>
+          </DropdownTrigger>
+          <DropdownMenu
+            variant="faded"
+            aria-label="Dropdown menu with description"
+          >
+            <DropdownSection
+              title="Welcome To My Kitchen"
+              showDivider
+              className=" flex flex-col justify-center items-center"
+            >
+              <DropdownItem key="home">
+                <Link
+                  color="foreground"
+                  as={NextLink}
+                  href="/"
+                  className=" flex flex-col justify-center items-center"
+                >
+                  <div className=" flex flex-col justify-center items-center">
+                    <IoIosHome className="w-[20px] h-[20px]" />
+                    <p>Home</p>
+                  </div>
+                </Link>
+              </DropdownItem>
+            </DropdownSection>
+            <DropdownItem key="dish">
+              <Link
+                as={NextLink}
+                href="/main"
+                className=" flex flex-col justify-center items-center dark:text-orange-300 text-purple-700"
+              >
+                <div className=" flex flex-col justify-center items-center">
+                  <GiCookingPot className="w-[30px] h-[30px]" />
+                  <p>Main Dish</p>
+                </div>
+              </Link>
+            </DropdownItem>
 
-      <NavbarContent className=" flex-2">
-        <NavbarBrand>
-          <Link as={NextLink} href="/">
-            <Image
-              as={NextImage}
-              priority={true}
-              isZoomed
-              width={65}
-              height={70}
-              src="/pixel/zozo.gif"
-              alt="NextUI Fruit Image with Zoom"
-              className="w-full h-full object-cover"
-            />
-          </Link>
-        </NavbarBrand>
+            <DropdownItem key="desert">
+              <Link
+                as={NextLink}
+                href="/desert"
+                className=" flex flex-col justify-center items-center  dark:text-orange-300 text-purple-700"
+              >
+                <div className=" flex flex-col justify-center items-center">
+                  <GiCakeSlice className="w-[20px] h-[20px]" />
+                  <p>Deserts</p>
+                </div>
+              </Link>
+            </DropdownItem>
+          </DropdownMenu>
+        </Dropdown>
       </NavbarContent>
 
       <NavbarContent>
@@ -58,45 +108,6 @@ const MyNavbar = () => {
           <ThemeSwitcher></ThemeSwitcher>
         </NavbarItem>
       </NavbarContent>
-
-      <NavbarMenu>
-        <NavbarMenuItem>
-          <Link as={NextLink} href="/">
-            <Image
-              as={NextImage}
-              priority={true}
-              isZoomed
-              width={75}
-              height={50}
-              src="/pixel/zozo.gif"
-              alt="NextUI Fruit Image with Zoom"
-              onClick={() => handleMenuChange(false)}
-            />
-          </Link>
-        </NavbarMenuItem>
-        <NavbarMenuItem>
-          <Link
-            as={NextLink}
-            color="foreground"
-            href="/main"
-            onClick={() => handleMenuChange(false)}
-          >
-            Main Dishes
-          </Link>
-        </NavbarMenuItem>
-
-        <NavbarMenuItem>
-          <Link
-            as={NextLink}
-            isBlock
-            color="warning"
-            href="/desert"
-            onClick={() => handleMenuChange(false)}
-          >
-            Deserts
-          </Link>
-        </NavbarMenuItem>
-      </NavbarMenu>
     </Navbar>
   );
 };

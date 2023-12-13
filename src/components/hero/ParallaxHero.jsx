@@ -31,7 +31,7 @@ const ParallaxHero = () => {
       <ParallaxLayer
         offset={2}
         speed={1}
-        className="z-10 bg-[#FFE3BB] dark:bg-[#515585]"
+        className="z-10 bg-[#FFE3BB] dark:bg-[#333866]"
       ></ParallaxLayer>
       <ParallaxLayer offset={2.5} speed={1.5} className="z-20">
         <div className="flex items-center justify-center h-30">
