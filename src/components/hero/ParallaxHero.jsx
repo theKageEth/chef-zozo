@@ -8,7 +8,11 @@ import ModalHome from "./ModalHome";
 const ParallaxHero = () => {
   const parallax = useRef(null);
   return (
-    <Parallax ref={parallax} pages={2.5}>
+    <Parallax
+      ref={parallax}
+      pages={3}
+      className="bg-[#D7E9F7] dark:bg-[#342056]"
+    >
       <ParallaxLayer offset={2} speed={0.2} className="z-20"></ParallaxLayer>
 
       <ParallaxLayer offset={1} speed={-0.2} className="z-20">
@@ -19,12 +23,18 @@ const ParallaxHero = () => {
             width={400}
             height={400}
             className="ml-4"
+            alt="Chef zozo Birmingham greetings welcomes you to her kitchen, Iraqi and middle eastern food"
           />
         </div>
       </ParallaxLayer>
 
-      <ParallaxLayer offset={1.8} speed={0.5} className="z-20">
-        <div className="flex items-center justify-center h-full">
+      <ParallaxLayer
+        offset={2}
+        speed={1}
+        className="z-10 bg-[#FFE3BB] dark:bg-[#515585]"
+      ></ParallaxLayer>
+      <ParallaxLayer offset={2.5} speed={1.5} className="z-20">
+        <div className="flex items-center justify-center h-30">
           <ModalHome className="mx-auto" />
         </div>
       </ParallaxLayer>
@@ -43,6 +53,7 @@ const ParallaxHero = () => {
           width={600}
           height={600}
           className=" mx-auto"
+          alt="Chef zozo Birmingham dark theme moon iraqi home cook"
         />
       </ParallaxLayer>
       <ParallaxLayer offset={0} speed={1} className=" hidden dark:block z-10 ">
@@ -52,6 +63,7 @@ const ParallaxHero = () => {
           width={1000}
           height={1000}
           className=" mx-auto"
+          alt="Chef zozo clouds"
         />
       </ParallaxLayer>
       <ParallaxLayer
@@ -65,6 +77,7 @@ const ParallaxHero = () => {
           width={1000}
           height={1000}
           className=" mx-auto"
+          alt="Chef zozo Birmingham clouds"
         />
       </ParallaxLayer>
 
@@ -77,6 +90,7 @@ const ParallaxHero = () => {
           width={400}
           height={400}
           className=" mx-auto "
+          alt="Chef zozo Birmingham light theme sun iraqi home cook"
         />
       </ParallaxLayer>
       <ParallaxLayer offset={0} speed={1} className=" dark:hidden z-10 ">
@@ -86,6 +100,7 @@ const ParallaxHero = () => {
           width={1000}
           height={1000}
           className=" mx-auto"
+          alt="Chef zozo Birmingham clouds"
         />
       </ParallaxLayer>
       <ParallaxLayer offset={0.9} speed={1.5} className=" dark:hidden z-10 ">

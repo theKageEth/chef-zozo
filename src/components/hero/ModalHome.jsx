@@ -1,3 +1,4 @@
+"use client";
 import {
   Modal,
   ModalContent,
@@ -15,7 +16,7 @@ const ModalHome = () => {
   return (
     <>
       <Button
-        className="bg-gradient-to-tr from-pink-500 to-blue-400 text-white shadow-lg w-[300px] h-[100px]"
+        className="bg-gradient-to-tr from-yellow-500 to-blue-300 dark:from-violet-500 dark:to-blue-300  text-black dark:text-white hover:shadow-lg w-[300px] h-[100px]  font-semibold"
         onPress={onOpen}
       >
         Check What is Cooking!

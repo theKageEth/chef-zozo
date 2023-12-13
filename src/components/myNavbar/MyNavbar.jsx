@@ -24,7 +24,7 @@ const MyNavbar = () => {
 
   return (
     <Navbar
-      className="flex flex-row dark:bg-purple-900 bg-sky-300"
+      className="flex flex-row dark:bg-[#220E24] bg-[#F4D19B]"
       classNames={{ base: "bg-violet-100 dark:bg-violet-900" }}
       isBordered
       isMenuOpen={isMenuOpen}

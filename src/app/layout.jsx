@@ -6,7 +6,8 @@ import Footer from "@/components/footer/Footer";
 
 export const metadata = {
   title: "Chef Zozo",
-  description: "Birmingham Iraqi home cook by Chef Zozo",
+  description:
+    "Birmingham Iraqi home cook by Chef Zozo Middle eastern food | Dolma | kabsah | Iraqi food",
 };
 
 export default function RootLayout({ children }) {
@@ -16,12 +17,8 @@ export default function RootLayout({ children }) {
         <ThemeProvider>
           <AuthProvider>
             <MyNavbar />
-            <div className="flex flex-col min-h-screen">
-              <div className="flex-grow bg-[#7cd3fc] dark:bg-[#0f0f0f]">
-                {children}
-              </div>
-              <Footer />
-            </div>
+            <div className="flex flex-col h-screen">{children}</div>
+            <Footer />
           </AuthProvider>
         </ThemeProvider>
       </body>

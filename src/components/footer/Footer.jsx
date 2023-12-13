@@ -3,7 +3,7 @@ import { FaSnapchatGhost } from "react-icons/fa";
 
 const Footer = () => {
   return (
-    <footer className="bg-green-600 h-[200px] text-center border-t p-8  mt-16  flex flex-col ">
+    <footer className="bg-[#F9F3DF] dark:bg-[#32407B] h-[200px] text-center border-t p-8 flex flex-col mt-0 ">
       <p>
         &copy; Chef Zozo 2023 | Developed By
         <a
@@ -15,12 +15,12 @@ const Footer = () => {
       </p>
       <div className="flex  justify-center">
         <a href="http://instagram.com/zaenbnabil/">
-          <FaInstagram className="bg-pink-500 w-[25px] h-[25px] m-1 mt-5" />
+          <FaInstagram className="bg-pink-500 dark: text-white w-[25px] h-[25px] m-1 mt-5" />
         </a>
 
         <a href="https://t.snapchat.com/wdlh7kWD">
           {" "}
-          <FaSnapchatGhost className=" bg-yellow-500 text-gray-300 w-[25px] h-[25px] m-1 mt-5" />
+          <FaSnapchatGhost className=" bg-yellow-300 text-white w-[25px] h-[25px] m-1 mt-5" />
         </a>
       </div>
     </footer>
