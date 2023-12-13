@@ -17,7 +17,9 @@ const MenuCards = ({ id, title, img, price }) => {
         />
       </CardBody>
       <p>
-        <strong>{title}</strong>
+        <strong>
+          {id}.{title}
+        </strong>
       </p>
       <p className="text-default-500">{price}</p>
       <CardFooter className="text-small justify-between"></CardFooter>

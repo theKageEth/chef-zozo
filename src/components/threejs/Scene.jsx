@@ -6,11 +6,17 @@ import Threejs from "./Threejs";
 
 const Scene = () => {
   return (
-    <div className=" w-screen h-1/2 ">
-      <Canvas>
-        <Threejs />
-      </Canvas>
-    </div>
+    <Canvas
+      className="r3f"
+      camera={{
+        fov: 45,
+        near: 0.1,
+        far: 2000,
+        position: [-2, 1.5, 4],
+      }}
+    >
+      <Threejs />
+    </Canvas>
   );
 };
 
