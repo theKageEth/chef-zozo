@@ -19,6 +19,10 @@ const DishSchema = new Schema(
       type: String,
       required: true,
     },
+    desc: {
+      type: String,
+      required: true,
+    },
   },
   { timestamps: true }
 );

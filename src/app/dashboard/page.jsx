@@ -3,23 +3,7 @@ import useSWR from "swr";
 import { useSession } from "next-auth/react";
 import { useRouter } from "next/navigation";
 import MenuCards from "@/components/cards/MenuCards";
-import { Button, ButtonGroup } from "@nextui-org/button";
-
-const getData = async () => {
-  try {
-    const res = await fetch(`${BASE_URL}/api/desert`, { cache: "no-store" });
-
-    if (!res.ok) {
-      throw new Error("Failed to fetch data");
-    }
-
-    const dishes = await res.json();
-    return dishes;
-  } catch (error) {
-    console.error("Error fetching data:", error.message);
-    throw error;
-  }
-};
+import { Button } from "@nextui-org/button";
 
 const Dashboard = () => {
   const session = useSession();
@@ -51,6 +35,7 @@ const Dashboard = () => {
     const title = e.target[1].value;
     const price = e.target[2].value;
     const img = e.target[3].value;
+    const desc = e.target[4].value;
     try {
       await fetch("/api/dish", {
         method: "POST",
@@ -59,6 +44,7 @@ const Dashboard = () => {
           title,
           price,
           img,
+          desc,
           username: session.data.user.name,
         }),
       });
@@ -74,6 +60,7 @@ const Dashboard = () => {
     const title = e.target[1].value;
     const price = e.target[2].value;
     const img = e.target[3].value;
+    const desc = e.target[4].value;
     try {
       await fetch("/api/desert", {
         method: "POST",
@@ -82,6 +69,7 @@ const Dashboard = () => {
           title,
           price,
           img,
+          desc,
           username: session.data.user.name,
         }),
       });
@@ -123,6 +111,7 @@ const Dashboard = () => {
             <input type="text" placeholder="title" required />
             <input type="text" placeholder="price" required />
             <input type="text" placeholder="img" required />
+            <input type="text" placeholder="desc" required />
             <button className="ml-10">Register</button>
           </form>
         </div>
@@ -136,6 +125,7 @@ const Dashboard = () => {
                   title={item.title}
                   img={item.img}
                   price={item.price}
+                  desc={item.desc}
                 />
                 <Button color="danger" onClick={() => handleDelete(item._id)}>
                   X
@@ -152,6 +142,7 @@ const Dashboard = () => {
             <input type="text" placeholder="title" required />
             <input type="text" placeholder="price" required />
             <input type="text" placeholder="img" required />
+            <input type="text" placeholder="desc" required />
             <button className="ml-10">Register</button>
           </form>
         </div>
@@ -164,6 +155,7 @@ const Dashboard = () => {
                   title={item.title}
                   img={item.img}
                   price={item.price}
+                  desc={item.desc}
                 />
                 <Button
                   color="danger"

@@ -39,7 +39,7 @@ const Threejs = () => {
               position={[0, 1.55, -1.4]}
               rotation-x={-0.256}
             >
-              <iframe src="https://www.instagram.com/zaenbnabil/embed" />
+              <iframe src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2Fzaineb.nabil.7&tabs=timeline&width=0&height=0&small_header=false&adapt_container_width=true&hide_cover=false&show_facepile=true&appId" />
             </Html>
           </primitive>
           <Text

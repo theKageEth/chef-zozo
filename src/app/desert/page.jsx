@@ -34,6 +34,7 @@ const Desert = async () => {
             title={item.title}
             img={item.img}
             price={item.price}
+            desc={item.desc}
           />
         ))}
       </section>
