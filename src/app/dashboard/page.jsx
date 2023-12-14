@@ -116,7 +116,7 @@ const Dashboard = () => {
           </form>
         </div>
 
-        <div className="mt-20 flex items-center justify-center">
+        <div className="mt-20 flex items-center justify-center ">
           <section className=" gap-4 grid grid-cols-2 sm:grid-cols-3">
             {dishData?.map((item) => (
               <div key={item._id}>
